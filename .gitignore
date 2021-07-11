@@ -1,0 +1,6 @@
+.idea/
+app/config/parameters.yml
+var/bootstrap.php.cache
+var/cache/
+var/logs/
+vendor/
