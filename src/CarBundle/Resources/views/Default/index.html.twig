@@ -7,4 +7,17 @@
 
 {% block body %}
     <h1> Our offer </h1>
+
+    <table class="table">
+        <tr>
+            <th>Make</th>
+            <th>Name</th>
+        </tr>
+        {% for car in cars %}
+            <tr>
+                <td>{{ car.make }}</td>
+                <td>{{ car.name }}</td>
+            </tr>
+        {% endfor %}
+    </table>
 {% endblock %}
