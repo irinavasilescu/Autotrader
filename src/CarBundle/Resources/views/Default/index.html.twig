@@ -8,6 +8,13 @@
 {% block body %}
     <h1> Our offer </h1>
 
+    <div>
+        {{ form_start(form, { attr: { style: 'display: inline-flex; float: right;' } }) }}
+        {{ form_widget(form.search, { attr: { placeholder: 'Search' } }) }}
+        <button type="submit" class="btn">Search</button>
+        {{ form_end(form) }}
+    </div>
+
     <table class="table">
         <tr>
             <th>Make</th>
