@@ -6,8 +6,29 @@
 {% endblock %}
 
 {% block body %}
-    <h1>{{ car.name }}</h1>
-    <h3>Make: {{ car.make }}</h3>
+    <h1>{{ car.make }} {{ car.name }}</h1>
+
+    <table class="table">
+        <tr>
+            <td>Price</td>
+            <td>{{ car.price }}</td>
+        </tr>
+        <tr>
+            <td>Year</td>
+            <td>{{ car.year }}</td>
+        </tr>
+        <tr>
+            <td>Navigation system</td>
+            <td>
+                {% if car.navigation %}
+                    YES
+                {% else %}
+                    NO
+                {% endif %}
+            </td>
+        </tr>
+    </table>
+
     <p>{{ car.description }}</p>
     <a href="{{ url('offer') }}">Back</a>
 {% endblock %}
