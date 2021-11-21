@@ -12,11 +12,8 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        $cars = [
-            ['make' => 'BMW', 'name' => 'X1'],
-            ['make' => 'Fiat', 'name' => 'Croma'],
-            ['make' => 'Audi', 'name' => 'Q7'],
-        ];
+        $carRepository = $this->getDoctrine()->getRepository('CarBundle:Car');
+        $cars = $carRepository->findAll();
         return $this->render('@Car/Default/index.html.twig', ['cars' => $cars]);
     }
 }
