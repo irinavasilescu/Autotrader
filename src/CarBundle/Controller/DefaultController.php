@@ -14,7 +14,7 @@ class DefaultController extends Controller
     public function indexAction()
     {
         $carRepository = $this->getDoctrine()->getRepository('CarBundle:Car');
-        $cars = $carRepository->findAll();
+        $cars = $carRepository->findCarsWithDetails();
         return $this->render('@Car/Default/index.html.twig', ['cars' => $cars]);
     }
 
@@ -26,7 +26,7 @@ class DefaultController extends Controller
     public function showAction($id)
     {
         $carRepository = $this->getDoctrine()->getRepository('CarBundle:Car');
-        $car = $carRepository->find($id);
+        $car = $carRepository->findCarWithDetailsById($id);
         return $this->render('@Car/Default/show.html.twig', ['car' => $car]);
     }
 }
